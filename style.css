@@ -1,0 +1,163 @@
+@font-face
+{
+    font-family: Roboto;
+    src: url(fonts/Roboto-Regular.ttf);
+}
+
+html, body
+{
+    margin: 0;
+    font-size: 1rem;
+    font-family: Roboto;
+    background-color: #F5F8FD;
+}
+
+h4
+{
+    text-align: center;
+}
+
+.leftSide
+{
+    box-sizing: border-box;
+    background-color: #F5F8FD;
+    float: left;
+    width: 75%;
+    padding: 2rem;
+}
+.rightSide {
+    box-sizing: border-box;
+    background-color: #3E78DA;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.leftSide p
+{
+    width: 70%;
+    text-align: justify;
+}
+
+.rightSide h3{
+    margin: 0;
+}
+
+.rightSide h2{
+    margin-bottom: 0;
+    margin-top:0;
+}
+
+.rightSide table{
+    border-spacing: 0;
+}
+
+.rightSide td{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.sec1
+{
+    margin: 0 0 3rem 0;
+}
+
+.sec2
+{
+    display: none;
+}
+
+.contentTable {
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    table-layout: fixed;
+    width: 80%;
+    border-spacing: 0;
+}
+
+.contentTable td{
+    padding: 1rem;
+}
+
+.contentTable tr{
+    margin-bottom: 2rem;
+}
+
+.contentTable tr:first-child{
+    background-color: #e6eefa;
+}
+
+.contentTable tr:hover{
+    background-color: #e6eefa;
+    transition: background-color 0.2s;
+}
+
+.contentTable input[type=number], .inputNumber
+{
+    border-style: none;
+    text-align: center;
+    width: 3rem;
+    border-radius: 1rem;
+    border: 2px solid #3E78DA;
+}
+
+.inputNumber
+{
+    width: 6rem;
+}
+
+.contentTable label
+{
+    font-size: 0.9rem;
+    font-weight: lighter;
+    
+}
+
+.boxOnRight h3{
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.boxOnRight h2{
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.logoAndName, .logoAndName img, .logoAndName h2{
+    display: inline-block;
+}
+
+.hrBLUE {
+    border-top: 1px solid #3E78DA;
+}
+
+.hrWHITE
+{
+    border-top: 1px solid white;
+}
+
+
+
+.footer p{
+    margin: auto;
+    
+}
+
+.footer {
+    margin-top: 10rem;
+    color: #8b8b8b;
+}
+
+#contributionMarginTable tr:nth-child(2){
+    font-weight: lighter;
+}

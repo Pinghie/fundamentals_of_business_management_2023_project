@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Inventory Estimator Tool</title>
+</head>
+<body>
+    <div class="container">
+        <div class="leftSide">
+            <h1 style="font-size: 3.5rem; margin: 0">Inventory Estimator Tool</h1>
+            <p>This tool empowers companies to easily estimate the value and track the stock levels of their inventory. With just a few inputs about the inventory and its products, the software takes care of the rest. Real-time solutions are conveniently presented in the sidebar, offering immediate insights for effective decision-making.</p>
+            
+            <hr class="hrBLUE">
+            
+            <div class="sec1">
+                <h2>Current stock</h2>
+                <p>This section is specifically designed for gathering essential information on the current inventory status and formulating estimates of its present value and stock level.</p>
+                
+                <h3>Base information</h3>
+                <p>To begin, we require two essential pieces of information: <i>Maximum Inventory Capacity</i> (which can be specified in any preferred unit of measurement, such as slots, boxes, units, etc.) and the <i>Number of different products</i>.</p>
+                
+                <label>Maximum Inventory Capacity: </label>
+                <input type="number" id="inventory_capacity_ID" min="100" max="10000000" placeholder="min: 100" class="inputNumber">
+                <br>
+                <label>Number of different products: </label>
+                <input type="number" id="different_products_ID" min="1" max="25" placeholder="min: 1"oninput="caricaInfoProducts(this.value)" class="inputNumber">
+            </div>
+            
+            <div class="sec2" id="sec2ID">
+                
+                <div class="divInfoProduct1">
+                    <h3>Products information</h3>
+                    <p>For each distinct product, it is required to know the number of pieces currently present in the inventory, the estimated selling price for each piece, the transactions (production and purchase) costs and how much space is occupied by each piece. Providing these information, the first estimates can be formulated.
+                        <br> 
+                    In particular, considering the selling price and the transaction costs, for each product a <i>Contribution margin</i> is computed. The estimated inventory value depends on these product costs.</p>
+                    <table class="contentTable" id="primaTabellaID"></table>
+                    
+                    <h4 style="margin: 4rem 0 0 0">Contribution margin for each product (estimated product cost)</h4>
+                    <table class="contentTable" id="contributionMarginTable">
+                    </table>
+                    
+                </div>
+                
+                <hr class="hrBLUE">
+                
+                <div class="divInfoProduct2">
+                    <h2>Predicted Stock</h2>
+                    <p>This section is dedicated to providing projections for future inventory value and stock levels based on selected transaction strategies. Specifically, it enables an analysis of how inventory parameters fluctuate in response to specific selling, producing, or purchasing decisions. It's also considered the variation of selling price of goods. </p>
+                    
+                    <h3>Price variation and product transactions</h3>
+                    <p>It is possible to simulate the effects of a variation in the selling price of products. Furthermore, for each distinct product it is possible to define desired transactions and observe their outcomes.</p>
+                    <table class="contentTable" id="secondaTabellaID">
+                    </table>
+                    
+                </div>
+                
+                <div class="footer">
+                    <p>This mockup should be viewed strictly as an aid for a preliminary low-level inventory estimation. Numerous other factors, which are not addressed here, significantly contribute to determining the actual value and stock levels of an inventory. Nevertheless, this tool can offer valuable insights into initial challenges in inventory management. Additionally, it is crucial to recognize that each company possesses unique needs and complications, necessitating tailored and specific solutions.
+                    <br>
+                    Need to measure KPIs for you company? Try the KPIs Estimator Tool at this <a href="index-kpi.html">link</a>.
+                    </p><br><br>
+                    
+                    <p style="text-align: center; font-size: 0.8rem;">Developed for the Challenge of Fundamentals of Business Management exam by Group 4 (StrataSync Solutions), University of Pisa, a.a. 2023/24. </p>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div class="rightSide">
+            
+            <img src="imgs/header.png" width="100%">
+            
+            <table>
+                <tr>
+                    <td style="border-bottom: 1px solid white">
+                        <img src="imgs/value.png" width="40%">
+                        <h3>Estimated Inventory Value</h3>
+                        <h2 id="estimatedValueID">-</h2>
+                    </td>
+                    <td style="border-bottom: 1px solid white">
+                        <img src="imgs/inventory.png" width="40%">
+                        <h3>Estimated Inventory Occupation</h3>
+                        <h2 id="estimatedOccupationID">-</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="imgs/value_predicted.png" width="40%">
+                        <h3>Predicted Inventory Value</h3>
+                        <h2 id="predictedValueID">-</h2>
+                        <h3 id="predictedPlusValueID">(-)</h3>
+                    </td>
+                    <td>
+                        <img src="imgs/predicted_inventory.png" width="40%">
+                        <h3>Predicted Inventory Occupation</h3>
+                        <h2 id="predictedOccupationID">-</h2>
+                        <h3 id="predictedPlusOccupationID">(-)</h3>     
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h3>Appreciation/Depreciation</h3>
+                        <h2 id="depreciationCostID">-</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h3>Transactions Cost/Profit</h3>
+                        <h2 id="transactionsCostID">-</h2>
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+    
+    <script src="js/currentScipt.js"></script>
+    <script src="js/predictedScript.js"></script>
+    <script src="js/gestoreHandler.js"></script>
+</body>
+</html>

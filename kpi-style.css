@@ -1,0 +1,171 @@
+@font-face
+{
+    font-family: Roboto;
+    src: url(fonts/Roboto-Regular.ttf);
+}
+
+html, body
+{
+    margin: 0;
+    font-size: 1rem;
+    font-family: Roboto;
+    background-color: #F5F8FD;
+}
+
+h4
+{
+    text-align: center;
+}
+
+.leftSide
+{
+    box-sizing: border-box;
+    background-color: #F5F8FD;
+    float: right;
+    width: 65%;
+    text-align: center;
+    padding: 2rem;
+}
+.rightSide {
+    box-sizing: border-box;
+    background-color: #3E78DA;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+}
+
+.leftSide p
+{
+    width: 70%;
+    text-align: justify;
+}
+
+.rightSide h3, .rightSide h2{
+    margin: 0;
+    text-align: center;
+}
+
+.rightSide h2{
+    margin-bottom: 0;
+    margin-top:0;
+}
+
+.logoAndName, .logoAndName img, .logoAndName h2{
+    display: inline-block;
+}
+
+#buttonsContainer {
+    box-sizing: border-box;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#buttonsTable {
+    margin: auto;
+    border-spacing: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+    table-layout: fixed;
+    width: 100%;
+}
+
+#buttonsTable td
+{
+    padding: 0.5rem 0.1rem;
+}
+
+#buttonsTable td input
+{
+    width: 100%;
+    background-color: #124499;
+    border-radius: 1rem;
+    padding: 1rem 0.5rem;
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-size: 1.1rem;
+    white-space: normal;
+}
+
+#buttonsTable td input:hover
+{
+    background-color: #4c7ac9;
+    outline:1px solid white;
+}
+
+.pressed
+{
+    background-color: white !important;
+    color: black !important;
+}
+
+.infoBox {
+    box-sizing: border-box;
+    padding: 1.5rem;
+    text-align: justify;
+    font-size: 1.2rem;
+}
+
+.bottomSide {
+    width: 100%;
+    margin-top: 10%;
+    font-size: 1.5rem;
+}
+
+.bottomSide div{
+    width: 40%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.outputSide {
+    vertical-align: top;
+    text-align: right
+}
+
+.outputSide p{
+    width: 100%;
+    text-align: right;
+    font-size: 2rem;
+}
+
+.inputSide {
+    text-align: left;
+}
+
+.inputSide input
+{
+    border-style: none;
+    text-align: center;
+    width: 3rem;
+    border-radius: 1rem;
+    border: 2px solid #3E78DA;
+}
+#infoText {
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 30%;
+    color: darkgrey;
+}
+
+#linkIndex:visited {
+    color: #000852;
+}
+
+#linkIndex:hover {
+    color: #c9c9c9;
+}
+
+#linkIndex:link {
+    color: #ffffff;
+}
+

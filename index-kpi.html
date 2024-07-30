@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="kpi-style.css">
+    <title>KPI Estimator Tool</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="rightSide">
+            
+            <img src="imgs/header.png" width="90%" style="margin: auto; margin-top:1rem">
+            
+            <div class="infoBox" style="display: block">
+                <h2>Welcome</h2>
+                <br>
+                Key performance indicators (KPI) refer to a set of quantifiable measurements used to track a company’s overall performance in relation to its established goals. It can be challenging to determine which metrics are actually worth using. Keeping in mind our company’s objectives and needs, a list of useful indicators (about company’s operations and management) is presented below. Click one of them to get started.
+            </div>  
+            
+            <div class="infoBox" id="inventoryTurnoverBox" style="display: none">
+                <h2>Inventory Turnover</h2>
+                <br>
+                A measurement that tracks how many times the inventory is sold and replaced over a set period of time (usually a year). Especially in this sector, perishable items are a daily concern and understanding how to avoid this situation is quite important. As shown in the formula, the higher this metric is, the quicker the company cycles its inventory. Therefore, a low value may suggest that it remains in stock for a longer period.
+            </div>
+            
+            <div class="infoBox" id="DIOBox" style="display: none">
+                <h2>Days Inventory Outstanding</h2>
+                <br>
+                A measure of inventory management effectiveness that represents the average number of days inventory remains in stock before being sold. A low value indicates that the firm is able to turn its inventory into sales quickly.
+            </div>
+            
+            <div class="infoBox" id="srBox" style="display: none">
+                <h2>Stock-out Rate</h2>
+                <br>
+                Measure that tells us how often a specific item’s inventory is depleted. When the formula returns a high value, it means that there could be some issues related to inventory management or demand forecasting.
+            </div>
+            
+            <div class="infoBox" id="frBox" style="display: none">
+                <h2>Fill Rate</h2>
+                <br>
+                The percentage of orders fulfilled directly from available stock. A high fill ratio suggests good product availability.
+            </div>
+            
+            <div class="infoBox" id="cccBox" style="display: none">
+                <h2>Cash Conversion Cycle</h2>
+                <br>
+                A metric that expresses the time (in days) that it takes for a company to turn its investments in inventory and other resources into revenue. The lower this metric is, the better is for the company.
+            </div>
+            
+            <div class="infoBox" id="pyBox" style="display: none">
+                <h2>Production Yield</h2>
+                <br>
+                Measures the percentage of finished products obtained from initial materials. Higher yield indicates better production efficiency.
+            </div>
+            
+            <div id="buttonsContainer">
+                <h3>Select a KPI</h3>
+                <table id="buttonsTable">
+                    <tr>
+                        <td><input id="inventoryTurnoverBtn" class="buttonKpi" type="button" value="Inventory Turnover" onclick="buttonClicked(this)"></td>
+                        <td><input id="DIOBtn" class="buttonKpi" type="button" value="Days Inventory Outstanding" onclick="buttonClicked(this)"></td>
+                    </tr>
+                    <tr>
+                        <td><input id="srBtn" class="buttonKpi" type="button" value="Stock-out rate" onclick="buttonClicked(this)"></td>
+                        <td><input id="frBtn" class="buttonKpi" type="button" value="Fill Rate" onclick="buttonClicked(this)"></td>
+                    </tr>
+                    <tr>
+                        <td><input id="cccBtn" class="buttonKpi" type="button" value="Cash Conversion Cycle" onclick="buttonClicked(this)"></td>
+                        <td><input id="pyBtn" class="buttonKpi" type="button" value="Production Yield" onclick="buttonClicked(this)"></td>
+                    </tr>
+                </table>
+                
+                <p style="margin: 0; font-size: 0.8rem; color: darkblue;">Try the <a href="index.html" id="linkIndex">Inventory Estimator Tool</a></p>
+            </div>
+            
+        </div>
+        
+        <div class="leftSide">
+            
+            <h1 style="font-size: 3rem; margin: 0 auto">KPIs Estimator Tool</h1>
+            
+            <div class="contentBox" style="display: block">
+                <p id="infoText">Select a KPI in the left-hand vertical bar to get started.</p>
+            </div>
+            
+            <div class="contentBox" id="itContentBox" style="display: none">
+                <img src="imgs/it.png" width="60%" style="margin-top:20%">
+                <div class="bottomSide">
+                    <div class="inputSide">
+                        <h3>INPUT</h3>
+                        <label>Cost of goods sold = </label>
+                        <input type="number" name="IT" oninput="calcola('IT')"><br>
+                        <label>Average inventory value = </label>
+                        <input type="number" name="IT" oninput="calcola('IT')">
+                    </div>
+                    <div class="outputSide">
+                        <h3>OUTPUT</h3>
+                        <p id="outputIT">IT = </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contentBox" id="dioContentBox" style="display: none">
+                <img src="imgs/dio.png" width="60%" style="margin-top:20%">
+                <div class="bottomSide">
+                    <div class="inputSide">
+                        <h3>INPUT</h3>
+                        <label>Average Inventory = </label>
+                        <input type="number" name="DIO" oninput="calcola('DIO')"><br>
+                        <label>Cost of goods sold = </label>
+                        <input type="number" name="DIO" oninput="calcola('DIO')"><br>
+                        <label>Number of days = </label>
+                        <input type="number" name="DIO" oninput="calcola('DIO')"><br>
+                    </div>
+                    <div class="outputSide">
+                        <h3>OUTPUT</h3>
+                        <p id="outputDIO">DIO = </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contentBox" id="srContentBox" style="display: none">
+                <img src="imgs/sr.png" width="60%" style="margin-top:20%">
+                <div class="bottomSide">
+                    <div class="inputSide">
+                        <h3>INPUT</h3>
+                        <label>N. Stockout orders = </label>
+                        <input type="number" name="SR" oninput="calcola('SR')"><br>
+                        <label>Total customer orders = </label>
+                        <input type="number" name="SR" oninput="calcola('SR')"><br>
+                    </div>
+                    <div class="outputSide">
+                        <h3>OUTPUT</h3>
+                        <p id="outputSR">SR = </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="contentBox" id="frContentBox" style="display: none">
+                <img src="imgs/fr.png" width="60%" style="margin-top:20%">
+                <div class="bottomSide">
+                    <div class="inputSide">
+                        <h3>INPUT</h3>
+                        <label>N. orders fulfilled = </label>
+                        <input type="number" name="FR" oninput="calcola('FR')"><br>
+                        <label>Total N. orders = </label>
+                        <input type="number" name="FR" oninput="calcola('FR')"><br>
+                    </div>
+                    <div class="outputSide">
+                        <h3>OUTPUT</h3>
+                        <p id="outputFR">FR = </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contentBox" id="cccContentBox" style="display: none">
+                <img src="imgs/ccc.png" width="60%" style="margin-top:20%">
+                <div class="bottomSide">
+                    <div class="inputSide">
+                        <h3>INPUT</h3>
+                        <label>DIO = </label>
+                        <input type="number" name="CCC" oninput="calcola('CCC')"><br>
+                        <label>Days sales outstanding = </label>
+                        <input type="number" name="CCC" oninput="calcola('CCC')"><br>
+                        <label>Days payables outstanding = </label>
+                        <input type="number" name="CCC" oninput="calcola('CCC')"><br>
+                    </div>
+                    <div class="outputSide">
+                        <h3>OUTPUT</h3>
+                        <p id="outputCCC">CCC = </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contentBox" id="pyContentBox" style="display: none">
+                <img src="imgs/py.png" width="60%" style="margin-top:20%">
+                <div class="bottomSide">
+                    <div class="inputSide">
+                        <h3>INPUT</h3>
+                        <label>Goods parts produced = </label>
+                        <input type="number" name="PY" oninput="calcola('PY')"><br>
+                        <label>Total N. parts started in production = </label>
+                        <input type="number" name="PY" oninput="calcola('PY')"><br>
+                    </div>
+                    <div class="outputSide">
+                        <h3>OUTPUT</h3>
+                        <p id="outputPY">PY = </p>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+
+    </div>
+    
+    <script src="js/mainScript.js"></script>
+</body>
+</html>
